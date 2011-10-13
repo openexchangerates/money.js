@@ -9,14 +9,24 @@
 
 	<title>money.js / fx() - javascript currency conversion library</title>
 	<meta name="description" content="money.js is a tiny (1kb) javascript library for real-time currency conversion">
-	<meta name="author" content="">
-	<link rel="shortcut icon" href="http://faviconist.com/icons/cd72e2203304ac336db27f25340e8177/favicon.ico" />
+	<meta name="author" content="Joss Crowcroft">
 
+	<link rel="shortcut icon" href="http://faviconist.com/icons/cd72e2203304ac336db27f25340e8177/favicon.ico" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="canonical" href="http://josscrowcroft.github.com/money.js/" />
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-17884149-3']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 	<link rel="stylesheet" href="demo-resources/style.css">
 	<link rel="stylesheet" href="http://josscrowcroft.github.com/javascript-sandbox-console/src/sandbox.css">
-	<script src="demo-resources/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 <body>
 <!-- 
@@ -75,6 +85,7 @@ require(["moneyjs"], function(fx) { /* ... */ });
 // Read more below or jump to the <strong><a href="#download" title="download money.js">downloads</a></strong>, <strong><a href="#playground" title="demo sandbox">demo playground</a></strong> or <strong><a href="#documentation" title="money.js documentation">documentation</a></strong>
 // by <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong></pre>
 
+			<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="josscrowcroft" data-url="http://josscrowcroft.github.com/money.js" data-text="money.js - tiny javascript library for real-time currency conversion">Tweet</a> &nbsp; <g:plusone size="medium"></g:plusone></p>
 
 			<h3>Currency conversion should be easy.</h3>
 
@@ -289,6 +300,8 @@ require(["path/to/money"], function(fx) {
 			<p>If you have any feedback, any at all, tweet <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong>, or head over to the <strong><a href="https://github.com/josscrowcroft/money.js/" title="josscrowcroft/money.js on GitHub">money.js github repository</a></strong> and create a new issue. I'm expecting a few bugs to crop up here and there, so you can help a tonne by reporting them and making suggestions!</p>
 			<p>Pull requests / contributions are similarly welcome. Get forkin'.</p>
 
+			<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="josscrowcroft" data-url="http://josscrowcroft.github.com/money.js" data-text="money.js - tiny javascript library for real-time currency conversion">Tweet</a> &nbsp; <g:plusone size="medium"></g:plusone></p>
+
 		</div>
 		<footer>
 			<h3>Meet the team:</h3>
@@ -328,13 +341,6 @@ require(["path/to/money"], function(fx) {
 		});
 		
 		prettyPrint();
-	</script>
-	
-	<script> // Change UA-XXXXX-X to be your site's ID
-		window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-		Modernizr.load({
-			load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-		});
 	</script>
 
 
@@ -384,6 +390,23 @@ require(["path/to/money"], function(fx) {
 			});
 		});
 
+
+		// twitter:
+		(function(d, t) {
+			var g = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+			g.async = true;
+			g.src = 'http://platform.twitter.com/widgets.js';
+			s.parentNode.insertBefore(g, s);
+		})(document, 'script');
+
+		// google plus:
+		window.___gcfg = {lang: 'en-GB'};
+		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
 	</script>
 
 
