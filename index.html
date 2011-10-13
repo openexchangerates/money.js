@@ -94,7 +94,7 @@ require(["moneyjs"], function(fx) { /* ... */ });
 			<p>This tied in closely with the <em>&ldquo;They want <strong>how much</strong> per month for their exchange-rates API?!&rdquo;</em> conundrum, where all the (freely available) data is hidden behind a hefty paywall - so I figured I could take a shot at that, too.</p>
 			<p>The <strong><a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Free Exchange Rates JSON API" target="_blank">Open Source Exchange Rates API</a></strong> project is powered by a simple nodeJS scraper, the lovable (and deadly) <a href="http://currencybot.github.com/" title="Currency Bot's little homepage" target="_blank">Currency Bot</a>, which collects all the exchange rates from the Google Calculator API (one by one) every hour, then pushes them in <acronym title="JavaScript Object Notation">JSON</acronym> format to a public GitHub repository for everybody to use as a de-facto API.</p>
 			<p>The rates are also available historically for any day since the project started, and could soon be extended to provide data going back several years.</p>
-			<p>In the documentation, there are examples showing how to integrate the API data (or any exchange-rate data) with the library, in only a few lines of code.</p>
+			<p>In the <a href="#documentation" title="money.js documentation">documentation</a>, there are examples showing how to integrate the API data (or any exchange-rate data) with the library, in only a few lines of code.</p>
 			<p>You only need the conversion rates relative to any single currency, in order to be able to convert values between any other two currencies; <strong>money.js</strong> does it all for you.</p>
 
 
@@ -264,7 +264,7 @@ fx(16288).convert({ from:"HKD", to:"GBP" }); // 1355.69458109</pre>
 
 			<h4 id="accounting.js">Usage with accounting.js</h4>
 			
-			<p>money.js works great with accounting.js - a library that provides reliable localisation and formatting of money and currency. Here are a few examples, just for kicks:</p>
+			<p>money.js works great with <a href="http://josscrowcroft.github.com/accounting.js" title="accounting.js - format money and numbers in javascript">accounting.js</a> - a library that provides reliable localisation and formatting of money and currency. Here are a few examples, just for kicks:</p>
 			<pre class="prettyprint">var value = accounting.unformat(someNumber); // clean up number (eg. user input)
 var toCurrency = "GBP"; // or some user input
 accounting.formatMoney( fx.convert(value, {from:"USD", to: toCurrency}), {
