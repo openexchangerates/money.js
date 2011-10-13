@@ -1,0 +1,12 @@
+{
+	"name" : "money",
+	"description" : "JavaScript currency conversion library.",
+	"homepage": "http://josscrowcroft.github.com/money.js",
+	"keywords" : ["money", "fx", "currency", "exchange", "utilities", "accounting"],
+	"author": "Joss Crowcroft <josscrowcroft@gmail.com> (http://www.josscrowcroft.com)",
+	"contributors" : [],
+	"dependencies" : [],
+	"repository" : {"type": "git", "url": "git://github.com/josscrowcroft/money.js.git"},
+	"main" : "money.js",
+	"version" : "0.0.1"
+}
