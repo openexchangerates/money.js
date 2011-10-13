@@ -62,7 +62,7 @@ $$$$$$$            $$$$$          $$$$$$$
 		<header class="clearfix">
 			<h1>money.js<span> / fx()</span></h1>
 			<h2>JavaScript currency conversion library, done right - with no dependencies, in just over 1 kb.</h2>
-			<p>Designed to work seamlessly with data from the <a href="http://josscrowcroft.github.com/exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates API</a> project - but can be set up to use any data source and base currency in just a few lines. And it works as a NodeJS/CJS and RequireJS/AMD module, too. Yay!</p>
+			<p>Designed to work seamlessly with data from the <a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates API</a> project - but can be set up to use any data source and base currency in just a few lines. And it works as a NodeJS/CJS and RequireJS/AMD module, too. Yay!</p>
 		</header>
 
 		<div id="main" role="main">
@@ -154,7 +154,7 @@ fx.rates = {
 }</pre>
 			<p>You can include as many or as few currencies as you need, and the rates can be approximate, historical or just plain wrong (though I wouldn't recommend it.)</p>
 			<p>But where do the exchange rates come from?</p>
-			<p>You can use the latest rates from the <strong><a href="http://josscrowcroft.github.com/exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates</a></strong> API, which are delivered in JSON format, ready for use with money.js. Ideally, you could load them inline into the HTML (on the server) - but you can also easily load them in via AJAX, or a script loader. With jQuery, you could do this:</p>
+			<p>You can use the latest rates from the <strong><a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates</a></strong> API, which are delivered in JSON format, ready for use with money.js. Ideally, you could load them inline into the HTML (on the server) - but you can also easily load them in via AJAX, or a script loader. With jQuery, you could do this:</p>
 			<pre class="prettyprint lang-js">&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
     // Load exchange rates data via the cross-domain/AJAX proxy:
     $.getJSON(
@@ -182,7 +182,7 @@ fx.rates = {
 	fx.base = &quot;<span class="pun">&lt;?php</span> <span class="kwd">echo</span> $base <span class="pun">?&gt;</span>&quot;;
 &lt;/script&gt;</span></pre>
 			<p>For a solid solution, <a href="http://currencybot.github.com" title="currency bot's little homepage" target="_blank">Currency Bot</a> recommends combining both approaches - inlining the approximate/cached exchange rates, then grabbing the most up-to-date rates via AJAX at load time, replacing the bootstrapped data once the request completes.</p>
-			<p>There are more examples and methods of grabbing the latest (and historical) data on the <strong><a href="http://josscrowcroft.github.com/exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates</a></strong> project homepage.</p>
+			<p>There are more examples and methods of grabbing the latest (and historical) data on the <strong><a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates</a></strong> project homepage.</p>
 			<p>Again, whichever API or data source you use, all you need to make certain of is that there is a base currency, and that the exchange rates are in the object format given above.</p>
 
 			<h4 id="fx.settings-fxSetup">fx.settings and fxSetup</h4>
