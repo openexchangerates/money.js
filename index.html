@@ -52,11 +52,11 @@ $$$$$$$            $$$$$          $$$$$$$
 		<header class="clearfix">
 			<h1>money.js<span> / fx()</span></h1>
 			<h2>JavaScript currency conversion library, done right - with no dependencies, in just over 1 kb.</h2>
-			<p>Designed to work seamlessly with data from the <strong><a href="http://josscrowcroft.github.com/exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">open source exchange rates API</a></strong> project - but can be set up to use any data source and base currency in just a few lines. And it's available as a NodeJS and AMD module, too. Yay!</p>
+			<p>Designed to work seamlessly with data from the <a href="http://josscrowcroft.github.com/exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates API</a> project - but can be set up to use any data source and base currency in just a few lines. And it works as a NodeJS/CJS and RequireJS/AMD module, too. Yay!</p>
 		</header>
 
 		<div id="main" role="main">
-			<p>Usage is so simple, you don't even really need to think about it:</p>
+
 			<pre class="prettyprint lang-js">// From any currency, to any currency:
 fx.convert(12.99, {from: "GBP", to: "HKD"});
 
@@ -72,7 +72,8 @@ fx(5318008).to("AED");
 var fx = require("moneyjs");
 require(["moneyjs"], function(fx) { /* ... */ });
 
-// Read more below - or jump to the <strong><a href="#download" title="download money.js">downloads</a></strong>, <strong><a href="#playground" title="demo sandbox">demo playground</a></strong> or <strong><a href="#documentation" title="money.js documentation">docs</a></strong>.</pre>
+// Read more below or jump to the <strong><a href="#download" title="download money.js">downloads</a></strong>, <strong><a href="#playground" title="demo sandbox">demo playground</a></strong> or <strong><a href="#documentation" title="money.js documentation">documentation</a></strong>
+// by <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong></pre>
 
 
 			<h3>Currency conversion should be easy.</h3>
@@ -98,7 +99,11 @@ require(["moneyjs"], function(fx) { /* ... */ });
 			<p>Oh hey! You can use this JavaScript Sandbox to play around with money.js and kick the tires a bit. It's running in a separate (sandboxed) scope, but you have access to jQuery, underscore, accounting.js and money.js. You can use <code>:load <em>script.js</em></code> to load extra libraries, or try <code>:help</code> if stuck.</p>
 			<p>Exchange rates should be set up already (defaults = <code>from: "USD"</code>, <code>to: "GBP"</code>) but if not, try refreshing the page. There are also some sample commands to try out.</p>
 
+
+			<!-- JS Sandbox Console [http://josscrowcroft.github.com/javascript-sandbox-console/] -->
 			<div id="sandbox">sandbox console loading...</div>
+
+
 			<h5>Some sample commands to get you started:</h5>
 			<p id="sample-commands"></p>
 
@@ -281,7 +286,7 @@ require(["path/to/money"], function(fx) {
 			<h3>That just about sums it up</h3>
 			<p>That's really all you need to remember - <code>fx.rates</code> and <code>fx.base</code> are important, and your basic function is <code>fx.convert(val, <em>[opts]</em>)</code>, which can be written like this: <code>fx(val).from("USD").to("GBP")</code> or in several other ways (re-read the docs if unsure.)</p>
 			<h5>Feedback / bugs:</h5>
-			<p>If you have any feedback, any at all, tweet <a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a>, or head over to the <a href="https://github.com/josscrowcroft/money.js/" title="josscrowcroft/money.js on GitHub">money.js github repository</a> and create a new issue. I'm expecting a few bugs to crop up here and there, so you can help a tonne by reporting them and making suggestions!</p>
+			<p>If you have any feedback, any at all, tweet <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong>, or head over to the <strong><a href="https://github.com/josscrowcroft/money.js/" title="josscrowcroft/money.js on GitHub">money.js github repository</a></strong> and create a new issue. I'm expecting a few bugs to crop up here and there, so you can help a tonne by reporting them and making suggestions!</p>
 			<p>Pull requests / contributions are similarly welcome. Get forkin'.</p>
 
 		</div>
@@ -333,7 +338,7 @@ require(["path/to/money"], function(fx) {
 	</script>
 
 
-	<!-- JS Sandbox Console (http://josscrowcroft.github.com/javascript-sandbox-console/) -->
+	<!-- JS sandbox console [http://josscrowcroft.github.com/javascript-sandbox-console/] -->
 
 	<!-- The sandbox template: -->
 	<script type="text/template" id="tplSandbox">

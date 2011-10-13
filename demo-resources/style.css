@@ -18,18 +18,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'CoustardBold';
-    src: url('fonts/coustard/coustard-black-webfont.eot');
-    src: url('fonts/coustard/coustard-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/coustard/coustard-black-webfont.woff') format('woff'),
-         url('fonts/coustard/coustard-black-webfont.ttf') format('truetype'),
-         url('fonts/coustard/coustard-black-webfont.svg#CoustardBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 
 /* --- HTML5 Boilerplate thingies --- */
 
@@ -44,8 +32,6 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
-
 
 abbr[title], acronym[title] { border-bottom: 1px dashed;cursor:help; }
 b, strong { font-weight: bold; }
@@ -98,14 +84,14 @@ html {
 	padding:0;
 }
 body {
-	font-family:"Georgia", "Times New Roman", times, serif;
-	font-weight:normal;
-	color:#464646;
-	background:#f7fff7;
-	padding:60px 70px 80px 120px;
+	font-family: "Helvetica Neue", sans-serif;
+	color: #eee;
+	background: #333;
+	padding:60px 70px 40px 120px;
 	width:640px;
-	font-size:16px;
-	line-height:1.6em;
+	font-size: 16px;
+	font-weight: normal;
+	font-weight: 200;
 }
 
 
@@ -115,13 +101,13 @@ body {
 h1 {
 	font-family:'Coustard', "Georgia", "Times New Roman", times, serif;
 	font-weight:normal;
-	font-size:5.2em;
+	font-size: 5.2em;
 	padding:0;
 	margin:0 0 0.4em;
 	line-height:1.2;
 }
 h1 span {
-	color:#7f7f7f;
+	color: #859900;
 	font-size:0.9em;
 }
 h2 {
@@ -131,14 +117,16 @@ h2 {
 	padding:0;
 	margin:0 0 1.4em;
 	line-height:1.4;
+	color: #CB4B16;
 }
 h3, h4 {
-	font-family:"Helvetica Neue", sans-serif;
+	font-family: "Helvetica Neue", sans-serif;
 	font-weight:bold;
 	font-size:1.5em;
 	padding:0;
 	margin:1em 0 1em;
-	line-height:1.2;
+	line-height: 1.2;
+	color: #eee;
 }
 h4 {
 	font-size:1.2em
@@ -180,10 +168,9 @@ strong a:focus,
 strong a:active {
 	border-bottom:3px solid #398922;
 }
-pre a,
-pre a span {
+pre a, pre a span, a, a span {
 	color:#268bd2 !important;
-	border-color:#268bd2 !important;
+	border-color: #268BD2 !important;
 }
 
 
@@ -207,7 +194,7 @@ abbr {
 code {
 	font-family:"Consolas", "Andale Mono", "Courier New", "Courier", monospace;
 	padding:0 2px;
-	color:#676767
+	color: #B58900;
 }
 pre {
 	font-size:14px;
@@ -217,20 +204,22 @@ pre {
 	border:0 none;
 	outline:0 none;
 	color: #ccc;
-	background: #333;
+	background: #222;
 	padding:20px 20px 15px;
 	-webkit-border-radius: 10px;
 	   -moz-border-radius: 10px;
 	        border-radius: 10px;
 	max-width:640px;
-	margin:10px 0 45px -20px;
+	margin: 10px 0 45px -20px;
     white-space: pre;
     display:block;
 	width:100%;
 	overflow-y:auto;
 	position:relative;
 }
-
+em {
+	font-style:italic;
+}
 
 
 
@@ -289,11 +278,11 @@ pre {
 /* For hot code highlighting, just add prettify.js! */
 @media screen {
 	.pln{ color:#fdf6e3 }
-	.str{ color:#cb4b16 } /* strings */
+	.str{ color:#CB4B16 } /* strings */
 	.kwd{ color:#B58900 } /* keywords */
 	.com{ color:#a2a2a2 } /* comments */
 	.typ{ color:#fdf6e3 }
-	.lit{ color:#859900 }
+	.lit{ color:#859900 } /* numbers */
 	.pun{ color:#93a1a1 }
 	.opn{ color:#93a1a1 }
 	.clo{ color:#93a1a1 }
@@ -332,7 +321,7 @@ pre {
 	background: #444;
 	-webkit-border-radius: 15px;
 	        border-radius: 15px;
-	border:8px solid #333;
+	border: 8px solid #222;
 }
 #main pre::-webkit-scrollbar-button,
 #main pre::-webkit-scrollbar-corner {
@@ -345,7 +334,14 @@ pre {
 #sandbox {
 	margin:10px 0 40px -20px !important;
 	max-width:auto !important;
+	background:#222 !important;
 }
 #sandbox pre.output {
 	height:235px !important;
 }
+#sandbox .input textarea {
+	background:#222 !important;
+}
+#sandbox pre.output span.error { color: #CB4B16!important; font-weight:bold; }
+#sandbox pre.output span.string { color: #CB4B16!important }
+#sandbox pre.output span.number { color: #859900!important }
