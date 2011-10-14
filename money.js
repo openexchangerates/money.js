@@ -146,4 +146,5 @@
 		root['fx'] = fx;
 	}
 
+	// Root will be `window` in browser or `global` on the server:
 }(this));

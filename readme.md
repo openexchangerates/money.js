@@ -14,8 +14,9 @@ fx(1.99).from("USD").to("AED");
 // And settings, allowing this:
 fx(1).convert();
 
-// Oh yeah and nodeJS:
-var fx = require('path/to/fx');
+// Oh yeah and nodeJS / AMD:
+var fx = require('money');
+require(["money"], function(fx) { /* ... */ });
 ```
 
 Visit **[josscrowcroft.github.com/money.js](http://josscrowcroft.github.com/money.js/)** for more info, examples and full documentation.

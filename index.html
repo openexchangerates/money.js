@@ -78,9 +78,9 @@ fx(1000).to("AED");
 fx.convert(5318008);
 fx(5318008).to("AED");
 
-// Can also be used as a <strong>nodeJS</strong> or <strong>requireJS/AMD</strong> module
-var fx = require("moneyjs");
-require(["moneyjs"], function(fx) { /* ... */ });
+// Can also be used as a <strong>nodeJS/npm</strong> or <strong>requireJS/AMD</strong> module
+var fx = require("money");
+require(["money"], function(fx) { /* ... */ });
 
 // Read more below or jump to the <strong><a href="#download" title="download money.js">downloads</a></strong>, <strong><a href="#playground" title="demo sandbox">demo playground</a></strong> or <strong><a href="#documentation" title="money.js documentation">documentation</a></strong>
 // by <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong></pre>
@@ -280,9 +280,10 @@ accounting.toFixed(0.615, 2); // "0.62" &lt;== that's better</pre>
 			<h4 id="nodeJS-npm">Usage in nodeJS/npm (CommonJS)</h4>
 
 			<p>money.js can easily be used inside nodeJS or any other CommonJS module loader:</p>
-			<pre class="prettyprint">var fx = require("/path/to/moneyjs");
+			<pre class="prettyprint">var fx = require("/path/to/money");
 // Now load in your exchange rates and create `fx.settings` if needed</pre>
-			<p>Soon you'll be able to install it via node package mananger, with <code>npm install moneyjs</code>, but not yet.</p>
+			<p>You can also install it via <code>npm install money</code>, then just use:</p>
+			<pre class="prettyprint">var fx = require("money");</pre>
 
 			<h4 id="amd-requirejs">Usage as a RequireJS/AMD module</h4>
 
