@@ -62,7 +62,7 @@ $$$$$$$            $$$$$          $$$$$$$
 		<header class="clearfix">
 			<h1>money.js<span> / fx()</span></h1>
 			<h2>JavaScript currency conversion library, done right - with no dependencies, in just over 1 kb.</h2>
-			<p>Designed to work seamlessly with data from the <a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates API</a> project - but can be set up to use any data source and base currency in just a few lines. And it works as a NodeJS/CJS and RequireJS/AMD module, too. Yay!</p>
+			<p>Designed to work seamlessly with data from the <a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates API</a> project - but can be set up to use any data source and base currency in just a few lines. And it works as a NodeJS/CJS, a RequireJS/AMD and <a href="http://ender.no.de/">Ender</a> module, too. Yay!</p>
 		</header>
 
 		<div id="main" role="main">
@@ -81,6 +81,9 @@ fx(5318008).to("AED");
 // Can also be used as a <strong>nodeJS/npm</strong> or <strong>requireJS/AMD</strong> module
 var fx = require("money");
 require(["money"], function(fx) { /* ... */ });
+
+// Or, if included in an <strong>Ender</strong> build you get
+$.forex(1000).from("AUD").to("USD")
 
 // Read more below or jump to the <strong><a href="#download" title="download money.js">downloads</a></strong>, <strong><a href="#playground" title="demo sandbox">demo playground</a></strong> or <strong><a href="#documentation" title="money.js documentation">documentation</a></strong>
 // by <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong></pre>
@@ -131,6 +134,7 @@ require(["money"], function(fx) { /* ... */ });
 				<li><a href="#accounting.js" title="">Usage with 'accounting.js'</a></li>
 				<li><a href="#nodeJS-npm" title="">Usage in nodeJS/npm</a></li>
 				<li><a href="#amd-requirejs" title="">Usage as a RequireJS/AMD module</a></li>
+				<li><a href="#ender" title="">Ender integration</a></li>
 			</ul>
 
 			<h4 id="basic-install">Basic Installation</h4>
@@ -294,6 +298,27 @@ require(["path/to/money"], function(fx) {
 	fx.convert(5318008);
 });</pre>
 			<p>You'll need to set up money.js inside the callback function, with <code>fx.rates</code>, <code>fx.base</code> and (optionally) <code>fx.settings</code> - once those are set up, they'll also be set up anywhere else you use <code>fx</code>.</p>
+
+			<h4 id="ender">Ender integration</h4>
+
+			<p>money.js is available as an <a href="http://ender.no.de/">Ender</a> module directly through the NPM repository. Simply include 'money' in your Ender build command:
+
+			<pre class="prettyprint">&gt; ender build money</pre>
+
+			<p>Then use it through the <code>$.forex</code> object.</p>
+
+			<pre class="prettyprint">$.forex(100).from('AUD').to('USD');</pre>
+
+			<p>If you include <a href="http://github.com/ded/reqwest/">Reqwest</a> in your build you will be able to load currency data with the <code>$.forex.loadLatest()</code> function:</p>
+
+			<pre class="prettyprint">&gt; ender build reqwest money</pre>
+
+			<pre class="prettyprint">$.forex.loadLatest();
+// -&gt; GET http://openexchangerates.org/latest.json
+// results will be made available to $.forex() once received
+
+// Or, provide a callback to be executed once we have the data:
+$.forex.loadLatest(function() { console.log($.forex(100).from('AUD').to('USD')) });</pre>
 
 			<h3>That just about sums it up</h3>
 			<p>That's really all you need to remember - <code>fx.rates</code> and <code>fx.base</code> are important, and your basic function is <code>fx.convert(val, <em>[opts]</em>)</code>, which can be written like this: <code>fx(val).from("USD").to("GBP")</code> or in several other ways (re-read the docs if unsure.)</p>
