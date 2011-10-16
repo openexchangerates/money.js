@@ -35,10 +35,12 @@ Then use it through the `$.forex` object.
 $.forex(100).from('AUD').to('USD');
 ```
 
-If you include [Reqwest](http://github.com/ded/reqwest/) in your build you will be able to load currency data with the `$.forex.loadLatest()` function:
+If you include [Reqwest](http://github.com/ded/reqwest/) or [jQuery](http://jquery.org) in your build you will be able to load currency data with the `$.forex.loadLatest()` function:
 
 ```
 > ender build reqwest money
+  # or
+> ender build jQuery money
 ```
 
 ```javascript

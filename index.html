@@ -309,9 +309,11 @@ require(["path/to/money"], function(fx) {
 
 			<pre class="prettyprint">$.forex(100).from('AUD').to('USD');</pre>
 
-			<p>If you include <a href="http://github.com/ded/reqwest/">Reqwest</a> in your build you will be able to load currency data with the <code>$.forex.loadLatest()</code> function:</p>
+			<p>If you include <a href="http://github.com/ded/reqwest/">Reqwest</a> or <a href="http://jquery.org/">jQuery</a> in your build you will be able to load currency data with the <code>$.forex.loadLatest()</code> function:</p>
 
-			<pre class="prettyprint">&gt; ender build reqwest money</pre>
+			<pre class="prettyprint">&gt; ender build reqwest money
+  # or
+&gt; ender build jQuery money</pre>
 
 			<pre class="prettyprint">$.forex.loadLatest();
 // -&gt; GET http://openexchangerates.org/latest.json
