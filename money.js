@@ -88,8 +88,14 @@
 	/* --- OOP wrapper and chaining --- */
 
 	// If fx(val) is called as a function, it returns a wrapped object that can be used OO-style
-	var fxWrapper = function(obj) {
-		this._v = obj;
+	var fxWrapper = function(val) {
+		// Experimental: parse strings to pull out currency code and value:
+		if ( typeof	val === "string" ) {
+			this._v = parseFloat(val.replace(/[^0-9-.]/g, ""));
+			this._fx = val.replace(/([^A-Za-z])/g, "");
+		} else {
+			this._v = val;
+		}
 	};
 
 	// Expose `wrapper.prototype` as `fx.prototype`
