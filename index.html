@@ -248,7 +248,11 @@ money(5318008).to("HKD");</pre>
 			<p>This allows a more expressive, human-readable way of writing code, where the underlying functions are exactly the same. The methods are as follows:</p>
 
 			<h5>fx() <span>returns a wrapped fx object for chaining (doesn't do any converting)</span></h5>
-			<pre class="prettyprint">fx(16288) // (fxWrapper)</pre>
+			<pre class="prettyprint">fx(16288) // (fxWrapper)
+			
+// NB: if parameter is a string, fx() will attempt to parse it to extract the
+// `from` currency and `value`, so this is the same as the next example:
+fx("$16288 HKD") // (fxWrapper)</pre>
 
 			<h5>.from() <span>returns a wrapped fx object, with the value converted from <code>base</code> to <code>from</code> currency:</span></h5>
 			<pre class="prettyprint">fx(16288).from("HKD") // (fxWrapper)</pre>
@@ -272,7 +276,7 @@ accounting.formatMoney( fx.convert(value, {from:"USD", to: toCurrency}), {
 	format: "%v %s"
 }); // eg. "53,180.08 GBP"</pre>
 			<p>The reason this is a good idea is that, by design, money.js returns a floating point value with high precision, eg. 8 decimal places (depending on the precision of the relative exchange rates and input value), which is pretty useless if you're displaying prices of things, which generally have 0 or 2 decimal places. accounting.js takes care of all the formatting you'll need for displaying your ready-converted currencies.</p>
-			<p>You could use <code>val.toFixed(2)</code> of course, but we're all (mostly) aware of how quirky (read: <em>&lsquo;argh&rsquo;</em>) that can be:</p>
+			<p>You could use <code>val.toFixed(2)</code> of course, but we're all (mostly) aware of how quirky (read: <em>&lsquo;arghh!&rsquo;</em>) that can be:</p>
 			<pre class="prettyprint">// accounting.toFixed() is a replacement for (Number).toFixed():
 (0.615).toFixed(2);           // "0.61" &lt;== wtfjs??
 accounting.toFixed(0.615, 2); // "0.62" &lt;== that's better</pre>
