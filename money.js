@@ -1,5 +1,5 @@
 /**
- * money.js / fx() v0.0.1
+ * money.js / fx() v0.0.2
  * by Joss Crowcroft, (c) 2011
  * 
  * JavaScript library for realtime currency conversion and exchange rate calculation
@@ -14,16 +14,16 @@
 	};
 
 	// Current version.
-	fx.version = '0.0.1';
+	fx.version = '0.0.2';
 
 
 	/* --- Setup --- */
 
-	// fxSetup can be defined before loading the money.js, to set the exchange rates and the
-	// base (and default from/to) currencies - or the rates can be loaded in later, as needed
+	// fxSetup can be defined before loading money.js, to set the exchange rates and the base
+	// (and default from/to) currencies - or the rates can be loaded in later if needed.
 	var fxSetup = root.fxSetup || {
 		rates : {},
-		base : "USD"
+		base : ""
 	};
 
 	// Object containing exchange rates relative to the fx.base currency, eg { "GBP" : "0.64" }
@@ -63,25 +63,26 @@
 	};
 
 	// Returns the exchange rate to `target` currency from `base` currency
-	var getRate = function(target, base) {
-		// Save bytes in minified version:
+	var getRate = function(to, from) {
+		// Save bytes in minified version
 		var rates = fx.rates;
 
-		// Throw an error if either rate isn't in the rates array:
-		if ( !rates[base] || !rates[target] ) throw "fx error";
+		// Throw an error if either rate isn't in the rates array
+		if ( !rates[to] || !rates[from] ) throw "fx error";
 
-		// If base currency === fx.base, return the basic exchange rate for the target currency
-		if ( base === fx.base ) {
-			return rates[target];
+		// If `from` currency === fx.base, return the basic exchange rate for the `to` currency
+		if ( from === fx.base ) {
+			return rates[to];
 		}
 
-		// If target currency === fx.base, return the inverse rate of the base currency
-		if ( target === fx.base ) {
-			return 1 / rates[base];
+		// If `to` currency === fx.base, return the basic inverse rate of the `from` currency
+		if ( to === fx.base ) {
+			return 1 / rates[from];
 		}
 
-		// Otherwise, return the target rate multipled by the inverse of the base rate
-		return rates[target] * (1 / rates[base]);
+		// Otherwise, return the `to` rate multipled by the inverse of the `from` rate to get the
+		// relative exchange rate between the two currencies
+		return rates[to] * (1 / rates[from]);
 	};
 
 
