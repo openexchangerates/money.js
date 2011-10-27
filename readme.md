@@ -11,7 +11,10 @@ fx.convert(1000, {from: "GBP", to: "HKD"});
 // With some chaining sugar:
 fx(1.99).from("USD").to("AED");
 
-// And settings, allowing this:
+// Basic parsing:
+fx("$1.99 HKD).to("EUR");
+
+// And simple setup, allowing this:
 fx(1).convert();
 
 // Oh yeah and nodeJS / AMD:
@@ -23,6 +26,10 @@ Visit **[josscrowcroft.github.com/money.js](http://josscrowcroft.github.com/mone
 
 
 ## Changelog
+
+### 0.0.2
+* Adds basic parsing to `fx()`, so that you can pass a formatted string, like so: `fx("$1.99 HKD").to("GBP")`
+* Some cleanup and improved comments and docs
 
 ### 0.0.1
 * First release
