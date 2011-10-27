@@ -12,7 +12,7 @@ fx.convert(1000, {from: "GBP", to: "HKD"});
 fx(1.99).from("USD").to("AED");
 
 // Basic parsing:
-fx("$1.99 HKD).to("EUR");
+fx("$1.99 HKD").to("EUR");
 
 // And simple setup, allowing this:
 fx(1).convert();
