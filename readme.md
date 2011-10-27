@@ -21,6 +21,36 @@ require(["money"], function(fx) { /* ... */ });
 
 Visit **[josscrowcroft.github.com/money.js](http://josscrowcroft.github.com/money.js/)** for more info, examples and full documentation.
 
+## Ender support
+
+money.js is available as an [Ender](http://ender.no.de/) module, simply include 'money' in your Ender build command:
+
+```
+> ender build money
+```
+
+Then use it through the `$.forex` object.
+
+```javascript
+$.forex(100).from('AUD').to('USD');
+```
+
+If you include [Reqwest](http://github.com/ded/reqwest/) or [jQuery](http://jquery.org) in your build you will be able to load currency data with the `$.forex.loadLatest()` function:
+
+```
+> ender build reqwest money
+  # or
+> ender build jQuery money
+```
+
+```javascript
+$.forex.loadLatest()
+// -> GET http://openexchangerates.org/latest.json
+// results will be made available to $.forex() once received
+
+// Or, provide a callback to be executed once we have the data:
+$.forex.loadLatest(function() { console.log($.forex(1).from('AUD').to('USD')) });
+```
 
 ## Changelog
 
