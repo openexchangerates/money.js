@@ -155,7 +155,7 @@ fx.rates = {
 			<p>You can include as many or as few currencies as you need, and the rates can be approximate, historical or just plain wrong (though I wouldn't recommend it.)</p>
 			<p>But where do the exchange rates come from?</p>
 			<p>You can use the latest rates from the <strong><a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates</a></strong> API, which are delivered in JSON format, ready for use with money.js. Ideally, you could load them inline into the HTML (on the server) - but you can also easily load them in via AJAX, or a script loader. With jQuery, you could do this:</p>
-			<pre class="prettyprint lang-js">&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+			<pre class="prettyprint lang-js">&lt;script type=&quot;text/javascript&quot;&gt;
     // Load exchange rates data via the cross-domain/AJAX proxy:
     $.getJSON(
         'http://openexchangerates.org/latest.json',
