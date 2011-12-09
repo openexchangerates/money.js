@@ -1,10 +1,14 @@
-/**
- * money.js / fx() v0.0.2
- * by Joss Crowcroft, (c) 2011
- * 
- * JavaScript library for realtime currency conversion and exchange rate calculation
- * Library structure and chaining techniques borrowed from underscore.js by Jeremy Ashkenas
- * For details, examples and documentation: http://josscrowcroft.github.com/money.js/
+/*!
+ * money.js / fx() v0.1.0
+ * Copyright 2011, Joss Crowcroft
+ *
+ * JavaScript library for realtime currency conversion and exchange rate calculation.
+ *
+ * Freely distributable under the MIT license.
+ * Portions of money.js are inspired by or borrowed from underscore.js
+ *
+ * For details, examples and documentation:
+ * http://josscrowcroft.github.com/money.js/
  */
 (function(root, undefined) {
 
@@ -14,7 +18,7 @@
 	};
 
 	// Current version.
-	fx.version = '0.0.2';
+	fx.version = '0.1.0';
 
 
 	/* --- Setup --- */
