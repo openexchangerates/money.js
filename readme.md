@@ -27,6 +27,9 @@ Visit **[josscrowcroft.github.com/money.js](http://josscrowcroft.github.com/mone
 
 ## Changelog
 
+### 0.1.1
+* Add fallback in case base rate is not in rates object (e.g. `"USD": 1`) to avoid errors.
+
 ### 0.1.0
 * Unexciting version number bump. Oh yeah and it has a license now.
 

@@ -1,5 +1,5 @@
 /*!
- * money.js / fx() v0.1.0
+ * money.js / fx() v0.1.1
  * Copyright 2011, Joss Crowcroft
  *
  * JavaScript library for realtime currency conversion and exchange rate calculation.
@@ -18,7 +18,7 @@
 	};
 
 	// Current version.
-	fx.version = '0.1.0';
+	fx.version = '0.1.1';
 
 
 	/* --- Setup --- */
@@ -70,6 +70,9 @@
 	var getRate = function(to, from) {
 		// Save bytes in minified version
 		var rates = fx.rates;
+
+		// Make sure the base rate is in the rates object:
+		rates[fx.base] = 1;
 
 		// Throw an error if either rate isn't in the rates array
 		if ( !rates[to] || !rates[from] ) throw "fx error";

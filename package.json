@@ -8,5 +8,5 @@
 	"dependencies" : [],
 	"repository" : {"type": "git", "url": "git://github.com/josscrowcroft/money.js.git"},
 	"main" : "money.js",
-	"version" : "0.1.0"
+	"version" : "0.1.1"
 }

@@ -331,7 +331,7 @@ require(["path/to/money"], function(fx) {
 	<script src="demo-resources/js/prettify.js"></script>
 
 	<script type="text/javascript">
-		$.getJSON('http://openexchangerates.org/latest.php', function(data) {
+		$.getJSON('http://openexchangerates.org/latest.json', function(data) {
 			fx.rates = data.rates;
 			fx.base = data.base;
 			
