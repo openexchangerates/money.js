@@ -331,18 +331,26 @@ require(["path/to/money"], function(fx) {
 	<script src="demo-resources/js/prettify.js"></script>
 
 	<script type="text/javascript">
-		$.getJSON('http://openexchangerates.org/latest.json', function(data) {
-			fx.rates = data.rates;
-			fx.base = data.base;
-			
-			fx.settings = {
-				from: "USD",
-				to: "GBP"
+		$.ajax({
+			url: 'http://openexchangerates.org/latest.json',
+			dataType: 'jsonp',
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			},
+			success: function(data) {
+				console.log(data);
+				fx.rates = data.rates;
+				fx.base = data.base;
+				
+				fx.settings = {
+					from: "USD",
+					to: "GBP"
+				}
+	
+				setTimeout(function() {
+					sandbox.model.iframeEval('fx.settings = { from : "USD", to : "GBP" }; fx.base = "USD"; fx.rates = ' + JSON.stringify(fx.rates) + '; ');
+				}, (typeof sandbox !== "undefined") ? 0 : 1000);
 			}
-
-			setTimeout(function() {
-				sandbox.model.iframeEval('fx.settings = { from : "USD", to : "GBP" }; fx.base = "USD"; fx.rates = ' + JSON.stringify(fx.rates) + '; ');
-			}, (typeof sandbox !== "undefined") ? 0 : 1000);
 		});
 		
 		prettyPrint();
