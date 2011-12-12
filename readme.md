@@ -27,6 +27,9 @@ Visit **[josscrowcroft.github.com/money.js](http://josscrowcroft.github.com/mone
 
 ## Changelog
 
+### 0.1.2
+* Strengthened up module definition similar to accounting.js
+
 ### 0.1.1
 * Add fallback in case base rate is not in rates object (e.g. `"USD": 1`) to avoid errors.
 

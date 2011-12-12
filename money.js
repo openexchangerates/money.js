@@ -1,5 +1,5 @@
 /*!
- * money.js / fx() v0.1.1
+ * money.js / fx() v0.1.2
  * Copyright 2011, Joss Crowcroft
  *
  * JavaScript library for realtime currency conversion and exchange rate calculation.
@@ -18,7 +18,7 @@
 	};
 
 	// Current version.
-	fx.version = '0.1.1';
+	fx.version = '0.1.2';
 
 
 	/* --- Setup --- */
@@ -134,9 +134,11 @@
 
 	// Export the fx object for CommonJS. If being loaded as an AMD module, define it as such.
 	// Otherwise, just add `fx` to the global object
-	if (typeof module !== 'undefined' && module.exports) {
-		module.exports = fx;
-		fx.fx = fx;
+	if (typeof exports !== 'undefined') {
+		if (typeof module !== 'undefined' && module.exports) {
+			exports = module.exports = fx;
+		}
+		exports.fx = lib;
 	} else if (typeof define === 'function' && define.amd) {
 		// Return the library as an AMD module:
 		define([], function() {
