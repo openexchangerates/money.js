@@ -27,18 +27,17 @@ Visit **[josscrowcroft.github.com/money.js](http://josscrowcroft.github.com/mone
 
 ## Changelog
 
-### 0.1.2
-* Strengthened up module definition similar to accounting.js
+** 0.1.3** - Fix typo in nodeJS module definition
 
-### 0.1.1
-* Add fallback in case base rate is not in rates object (e.g. `"USD": 1`) to avoid errors.
+** 0.1.2** - Strengthened up module definition similar to accounting.js
 
-### 0.1.0
-* Unexciting version number bump. Oh yeah and it has a license now.
+** 0.1.1** - Add fallback in case base rate is not in rates object (e.g. `"USD": 1`) to avoid errors.
 
-### 0.0.2
+** 0.1.0** - Unexciting version number bump. Oh yeah and it has a license now.
+
+** 0.0.2**
+
 * Adds basic parsing to `fx()`, so that you can pass a formatted string, like so: `fx("$1.99 HKD").to("GBP")`
 * Some cleanup and improved comments and docs
 
-### 0.0.1
-* First release
+** 0.0.1** - First release

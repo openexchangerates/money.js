@@ -1,5 +1,5 @@
 /*!
- * money.js / fx() v0.1.2
+ * money.js / fx() v0.1.3
  * Copyright 2011, Joss Crowcroft
  *
  * JavaScript library for realtime currency conversion and exchange rate calculation.
@@ -18,7 +18,7 @@
 	};
 
 	// Current version.
-	fx.version = '0.1.2';
+	fx.version = '0.1.3';
 
 
 	/* --- Setup --- */
@@ -35,7 +35,7 @@
 
 	// Default exchange rate base currency (eg "USD"), which all the exchange rates are relative to
 	fx.base = fxSetup.base;
-	
+
 	// Default from / to currencies for conversion via fx.convert():
 	fx.settings = {
 		from : fxSetup.from || fx.base,
