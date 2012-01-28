@@ -138,7 +138,7 @@
 		if (typeof module !== 'undefined' && module.exports) {
 			exports = module.exports = fx;
 		}
-		exports.fx = lib;
+		exports.fx = fx;
 	} else if (typeof define === 'function' && define.amd) {
 		// Return the library as an AMD module:
 		define([], function() {
