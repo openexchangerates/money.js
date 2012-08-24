@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="http://josscrowcroft.github.com/javascript-sandbox-console/src/sandbox.css">
 </head>
 <body>
-<!-- 
+<!--
                    $$$$$
                    $$$$$
            $$$$$$$$$$$$$$$$$$
@@ -62,7 +62,7 @@ $$$$$$$            $$$$$          $$$$$$$
 		<header class="clearfix">
 			<h1>money.js<span> / fx()</span></h1>
 			<h2>JavaScript currency conversion library, done right - with no dependencies, in just over 1 kb.</h2>
-			<p>Designed to work seamlessly with data from the <a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates API</a> project - but can be set up to use any data source and base currency in just a few lines. And it works as a NodeJS/CJS and RequireJS/AMD module, too. Yay!</p>
+			<p>Designed to work seamlessly with data from the <strong><a href="http://openexchangerates.org/" title="Free JSON Currency Conversion Exchange Rates API" target="_blank">Open Exchange Rates API</a></strong> project - but can easily use any data source and base currency with just a few lines of setup. And it works as a nodeJS/npm and RequireJS (AMD) module, too. Yay!</p>
 		</header>
 
 		<div id="main" role="main">
@@ -85,30 +85,35 @@ require(["money"], function(fx) { /* ... */ });
 // Read more below or jump to the <strong><a href="#download" title="download money.js">downloads</a></strong>, <strong><a href="#playground" title="demo sandbox">demo playground</a></strong> or <strong><a href="#documentation" title="money.js documentation">documentation</a></strong>
 // by <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong></pre>
 
-			<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="josscrowcroft" data-url="http://josscrowcroft.github.com/money.js" data-text="money.js - tiny javascript library for real-time currency conversion">Tweet</a> &nbsp; <g:plusone size="medium"></g:plusone></p>
+			<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="josscrowcroft" data-url="http://josscrowcroft.github.com/money.js" data-text="money.js - tiny javascript library for real-time currency conversion" target="_blank">Tweet</a> &nbsp; <g:plusone size="medium"></g:plusone></p>
 
-			<h3>Currency conversion should be easy.</h3>
+			<h3>JavaScript Currency Conversion should be easy!</h3>
 
-			<p>I was growing tired of trying to adapt those 10-year-old "FREE Currency Converter JavaScripts!" into something workable for our enterprise app at demand analytics - so I wrote a simple library, with one function: to convert a value from any currency to any other currency.</p>
-			<h4>Aside: exchange rate data should be free.</h4>
-			<p>This tied in closely with the <em>&ldquo;They want <strong>how much</strong> per month for their exchange-rates API?!&rdquo;</em> conundrum, where all the (freely available) data is hidden behind a hefty paywall - so I figured I could take a shot at that, too.</p>
-			<p>The <strong><a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Free Exchange Rates JSON API" target="_blank">Open Source Exchange Rates API</a></strong> project is powered by a simple nodeJS scraper, the lovable (and deadly) <a href="http://currencybot.github.com/" title="Currency Bot's little homepage" target="_blank">Currency Bot</a>, which collects all the exchange rates from the Google Calculator API (one by one) every hour, then pushes them in <acronym title="JavaScript Object Notation">JSON</acronym> format to a public GitHub repository for everybody to use as a de-facto API.</p>
-			<p>The rates are also available historically for any day since the project started, and could soon be extended to provide data going back several years.</p>
-			<p>In the <a href="#documentation" title="money.js documentation">documentation</a>, there are examples showing how to integrate the API data (or any exchange-rate data) with the library, in only a few lines of code.</p>
+			<p>Forget trying to adapt those 10-year-old <em>"FREE Currency Converter JavaScripts!"</em> into something workable for your enterprise software or shopping cart: <strong>money.js</strong> is a simple library with one function: to convert a value from any currency to any other currency.</p>
+
+			<p>Read on for some background information (recommended!) or jump straight to the <strong><a href="#download" title="download money.js">downloads</a></strong>, <strong><a href="#playground" title="demo sandbox">demo playground</a></strong> or <strong><a href="#documentation" title="money.js documentation">documentation</a></strong>.</p>
+			<h4>Introduction</h4>
+
+			<p>First things first: in order to do currency conversion in JavaScript, you need a reliable source of real-time exchange rates. The industry-standard exchange rate APIs, which people use to make currency trades, may cost anywhere between $100 and $1,000 per month for access!</p>
+			<p>The fact is though, 99% of apps and shopping carts <em>don't need</em> this expensive level of accuracy!</p>
+			<p>With that in mind, the <strong><a href="http://openexchangerates.org" title="Free Real-time Exchange Rates JSON API" target="_blank">Open Exchange Rates API</a></strong> uses algorithmic blending to calculate a consistently accurate and unbiased set of rates for 160 world currencies - and costs 10-20x less than the most popular competitor (with a <em>Forever Free</em> plan for most users).</p>
+			<p>Also, money.js allows you to use <em>any</em> source of exchange rates.</p>
+			<p>In the <strong><a href="#documentation" title="money.js documentation">documentation</a></strong>, there are examples showing how to integrate the API data (or any exchange-rate data) with the library, in only a few lines of code.</p>
 			<p>You only need the conversion rates relative to any single currency, in order to be able to convert values between any other two currencies; <strong>money.js</strong> does it all for you.</p>
 
 
 			<h3 id="download">Downloads</h3>
-			<p>NB: money.js is currently alpha, and hasn't had enough testing. Give it a week or two to hammer out any bugs, before using it in a production website/app.</p>
-			<h4>&raquo; &nbsp;<a href="http://josscrowcroft.github.com/money.js/money.js" title="money.js (development, uncompressed)">money.js</a> <span>development version (4.3 kb)</h4>
-			<h4>&raquo; &nbsp;<a href="http://josscrowcroft.github.com/money.js/money.min.js" title="money.min.js (production, minified)">money.min.js</a> <span>production/minified version (1.1 kb)</h4>
+			<p>NB: these links always point to the latest stable version of money.js:</p>
+			<h4>&raquo; &nbsp;<strong><a href="http://josscrowcroft.github.com/money.js/money.js" title="money.js (development, uncompressed)" target="_blank">money.js</a></strong> <span>development version (4.3 kb)</h4>
+			<h4>&raquo; &nbsp;<strong><a href="http://josscrowcroft.github.com/money.js/money.min.js" title="money.min.js (production, minified)" target="_blank">money.min.js</a></strong> <span>production/minified version (1.1 kb)</h4>
 			<p>There are more download options available on the GitHub repository, at <strong><a href="https://github.com/josscrowcroft/money.js/" title="josscrowcroft/money.js on GitHub">josscrowcroft/money.js</a></strong>.</p>
 
 
 			<h3 id="playground">Demo Playground</h3>
 
-			<p>Oh hey! You can use this JavaScript Sandbox to play around with money.js and kick the tires a bit. It's running in a separate (sandboxed) scope, but you have access to jQuery, underscore, accounting.js and money.js. You can use <code>:load <em>script.js</em></code> to load extra libraries, or try <code>:help</code> if stuck.</p>
-			<p>Exchange rates should be set up already (defaults = <code>from: "USD"</code>, <code>to: "GBP"</code>) but if not, try refreshing the page. There are also some sample commands to try out.</p>
+			<p>Oh hey! You can use this JavaScript Sandbox to play around with money.js and kick the tires a bit. It's running in a separate (sandboxed) scope, but you have access to jQuery (<code>$</code>), underscore (<code>_</code>), accounting.js (<code>accounting</code>) and money.js (<code>fx</code>).</p>
+			<p>You can use <code>:load <em>script.js</em></code> to load extra libraries, or try <code>:help</code> if stuck.</p>
+			<p>Exchange rates should be set up already (defaults = <code>from: "USD"</code>, <code>to: "GBP"</code>) but if not, try refreshing the page. There are some sample commands to try out below!</p>
 
 
 			<!-- JS Sandbox Console [http://josscrowcroft.github.com/javascript-sandbox-console/] -->
@@ -118,47 +123,51 @@ require(["money"], function(fx) { /* ... */ });
 			<h5>Some sample commands to get you started:</h5>
 			<p id="sample-commands"></p>
 
+			<p><em>Interested in putting the sandbox on your JavaScript library homepage? It's on GitHub at <strong><a href="http://josscrowcroft.github.com/javascript-sandbox-console/" title="JS Sandbox Console" target="_blank">josscrowcroft/javascript-sandbox-console</a></strong>!</em></p>
 
 			<h3 id="documentation">Documentation</h3>
 
 			<ul>
-				<li><a href="#basic-install" title="">Basic installation</a></li>
-				<li><a href="#fx.rates" title="">Setting up exchange rates with fx.rates</a></li>
-				<li><a href="#fx.settings-fxSetup" title="">fx.settings</a></li>
-				<li><a href="#fx.convert" title="">fx.convert()</a></li>
-				<li><a href="#fx.noConflict" title="">fx.noConflict()</a></li>
-				<li><a href="#chaining-fx" title="">Chaining with fx(val)</a></li>
-				<li><a href="#accounting.js" title="">Usage with 'accounting.js'</a></li>
-				<li><a href="#nodeJS-npm" title="">Usage in nodeJS/npm</a></li>
-				<li><a href="#amd-requirejs" title="">Usage as a RequireJS/AMD module</a></li>
+				<li><strong><a href="#basic-install" title="">Basic installation</a></strong></li>
+				<li><strong><a href="#fx.rates" title="">Setting up exchange rates with fx.rates</a></strong></li>
+				<li><strong><a href="#fx.settings-fxSetup" title="">fx.settings</a></strong></li>
+				<li><strong><a href="#fx.convert" title="">fx.convert()</a></strong></li>
+				<li><strong><a href="#fx.noConflict" title="">fx.noConflict()</a></strong></li>
+				<li><strong><a href="#chaining-fx" title="">Chaining with fx(val)</a></strong></li>
+				<li><strong><a href="#accounting.js" title="">Usage with 'accounting.js'</a></strong></li>
+				<li><strong><a href="#nodeJS-npm" title="">Usage in nodeJS/npm</a></strong></li>
+				<li><strong><a href="#amd-requirejs" title="">Usage as a RequireJS/AMD module</a></strong></li>
 			</ul>
 
 			<h4 id="basic-install">Basic Installation</h4>
-			
-			<p>You've probably figured this one out, but here's how to use money.js as a standalone library (for modules and script loaders, there are guides lower down.) Just download the minified or development version of money.js, and include it like this:</p>
+
+			<p>You've probably figured this one out, but here's how to use money.js as a standalone library (for modules and script loaders, there are guides lower down.) Just <strong><a href="#download" title="download money.js">download</a></strong> the minified or development version of money.js, and include it like this:</p>
 			<pre class="prettyprint">&lt;script src=&quot;path/to/money.js&quot;&gt;&lt;/script&gt;</pre>
 			<p>You'll need to do one more thing before you can use it, though, which is...</p>
 
 			<h4 id="fx.rates">Setting up exchange rates with fx.rates</h4>
 
-			<p>First and foremost, to convert currencies, you're going to need some exchange rates, and a base currency. (As long as you have exchange rates for every currency you need relative to one single other currency, money.js can convert between any two; see <code>fx.convert</code> for details on that.)</p>
-			<p>The library doesn't really care which format you use for the currency names, how accurate they are, or which currency is your base rate - all that matters is the object format, shown below.</p>
-			<p>Rates are stored in the <code>fx.rates</code> object, while the base currency is stored in <code>fx.base</code>. They look kinda like this:</p>
+			<p>First and foremost, to convert currencies, you're going to need some exchange rates, and a <code>base</code> currency. (As long as you have exchange rates for every currency relative to one single other ('base') currency, money.js can convert between <em>any two</em>, without going via the <code>base</code>. See <code>fx.convert</code> for details on that.)</p>
+			<p>The library doesn't really care which format you use for the currency names (but standard three-letter codes are recommended), nor how accurate they are or which currency is your <code>base</code> rate - all that matters is the object format, shown below.</p>
+			<p>Rates are stored in the <code>fx.rates</code> object, while the <code>base</code> currency is stored in <code>fx.base</code>. They look kinda like this:</p>
 			<pre class="prettyprint">fx.base = "USD";
 fx.rates = {
-	"EUR" : 0.74510096, // eg. 1 USD === 0.74510096 EUR
-	"GBP" : 0.64771034,
-	"HKD" : 7.78191949,
-	"USD" : 1,          // always include the base rate (1:1)
+	"EUR" : 0.745101, // eg. 1 USD === 0.745101 EUR
+	"GBP" : 0.647710, // etc...
+	"HKD" : 7.781919,
+	"USD" : 1,        // always include the base rate (1:1)
 	/* etc */
 }</pre>
-			<p>You can include as many or as few currencies as you need, and the rates can be approximate, historical or just plain wrong (though I wouldn't recommend it.)</p>
-			<p>But where do the exchange rates come from?</p>
-			<p>You can use the latest rates from the <strong><a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates</a></strong> API, which are delivered in JSON format, ready for use with money.js. Ideally, you could load them inline into the HTML (on the server) - but you can also easily load them in via AJAX, or a script loader. With jQuery, you could do this:</p>
+			<p>You can include as many or as few currencies as you need, and the rates can be approximate, historical or just plain wrong (though I wouldn't recommend it!)</p>
+			<p>NB: you need to include the <code>base</code> rate (the currency code from <code>fx.base</code>) in <code>fx.rates</code> object as well, for example <code>"USD" : 1</code>, so that money.js can use it for its calculations.</p>
+			<p>But wait! Where do these exchange rates come from?</p>
+			<p>You can use the latest rates from the <strong><a href="http://openexchangerates.org" title="Exchange Rates JSON API, free currency data" target="_blank">Open Exchange Rates</a></strong> API, which are delivered in JSON format, ready for use with money.js. You'll need to <strong><a href="http://openexchangerates.org" title="Open Exchange Rates Free App ID Sign-up" target="_blank">sign up</a></strong> for an App ID, and you can choose whichever option you need (there is a generous <em>Forever Free</em> plan.)</p>
+			<p>You could cache the rates on your server, then bootstrap them inline into the HTML - but you can also easily load them in via AJAX, or a script loader. With jQuery, you could do this:</p>
 			<pre class="prettyprint lang-js">&lt;script type=&quot;text/javascript&quot;&gt;
-    // Load exchange rates data via the cross-domain/AJAX proxy:
+    // Load exchange rates data via AJAX:
     $.getJSON(
-        'http://openexchangerates.org/latest.json',
+    	// NB: using Open Exchange Rates here, but you can use any source!
+        'http://openexchangerates.org/api/latest.json?app_id=<em>[YOUR APP ID]</em>',
         function(data) {
             // Check money.js has finished loading:
             if ( typeof fx !== "undefined" && fx.rates ) {
@@ -174,16 +183,15 @@ fx.rates = {
         }
     );
 &lt;/script&gt;</pre>
-			<p>AJAX works great, but you'll need to wait until the GET request has completed before you can get converting, and if it fails, you should have a plan B.</p>
-			<p>A slightly better and more reliable way is to bootstrap the exchange rates inline into your HTML page, using CURL or some other library to grab the file, then printing them out in a script tag. Here's a PHP example:</p>
-			<pre><span class="com">&lt;!-- assuming you've already loaded money.js, above --&gt;</span>
-<span class="pln">&lt;script <span class="atn">type</span><span class="pun">=</span><span class="str">&quot;text/javascript&quot;</span>&gt;
-	fx.rates = {<span class="pun">&lt;?php</span> <span class="kwd">echo</span> json_encode($rates); <span class="pun">?&gt;</span>};
-	fx.base = &quot;<span class="pun">&lt;?php</span> <span class="kwd">echo</span> $base <span class="pun">?&gt;</span>&quot;;
-&lt;/script&gt;</span></pre>
-			<p>For a solid solution, <a href="http://currencybot.github.com" title="currency bot's little homepage" target="_blank">Currency Bot</a> recommends combining both approaches - inlining the approximate/cached exchange rates, then grabbing the most up-to-date rates via AJAX at load time, replacing the bootstrapped data once the request completes.</p>
-			<p>There are more examples and methods of grabbing the latest (and historical) data on the <strong><a href="http://josscrowcroft.github.com/open-exchange-rates/" title="Open Source Currency Exchange Rates API" target="_blank">Open Source Exchange Rates</a></strong> project homepage.</p>
-			<p>Again, whichever API or data source you use, all you need to make certain of is that there is a base currency, and that the exchange rates are in the object format given above.</p>
+			<p>AJAX works great, but you'll need to wait until the AJAX request has completed before you can get converting. Therefore you should have a plan B, for example, inlining the approximate/cached exchange rates which could be used while the AJAX request is loading.</p>
+			<p>You could also skip using AJAX and use the slightly more reliable bootstrapping method - which will also require fewer API requests - using CURL or some other library to grab the file, then printing them out in a script tag.</p>
+			<p>This works in any language or framework, but here's a PHP example:</p>
+			<pre class="prettyprint lang-php">&lt;?php
+	// Bootstrap loaded exchange rates into JavaScript for money.js:
+	echo '&lt;script&gt;fx.rates = ' . json_encode($exchangeRates-&gt;rates) . '; fx.base = ' . json_encode($exchangeRates-&gt;base) . '&lt;/script&gt;';
+?&gt;</pre>
+			<p>There are more examples and methods of grabbing the latest (and historical) data, for all the most common languages and frameworks, on the <strong><a href="http://openexchangerates.org" title="Open Exchange Rates - Free JSON Currency Conversion" target="_blank">Open Exchange Rates</a></strong> site (check out the documentation).</p>
+			<p>Whichever API or data source you use, all you need to make certain of is that there is a <code>base</code> currency, and that the exchange rates are in the object format given above.</p>
 
 			<h4 id="fx.settings-fxSetup">fx.settings and fxSetup</h4>
 
@@ -200,14 +208,14 @@ var fxSetup = {
 	to : "AED"
 };</pre>
 			<p><strong>Note about using fxSetup:</strong> If using <code>fxSetup</code>, the variable needs to be available to the library (in scope) - so use <code>window.fxSetup</code> if needed. Also note that the fxSetup method won't work if using money.js as an AMD / CommonJS module, because it won't have access to outside variables (so use <code>fx.settings</code> for those).</p>
-			<p>Oh, and you can also use <code>fxSetup</code> to load in the exchange rates and base currency before loading the library, which would look something like this:</p>
+			<p>Oh, and you can also use <code>fxSetup</code> to load in the exchange rates and <code>base</code> currency before loading the library, which would look something like this:</p>
 			<pre class="prettyprint">// Adding exchange rates and base currency to `fxSetup`:
 var fxSetup = {
 	from : "GBP",
 	to : "AED",
 	base : "USD",
 	rates : {
-		"AED" : 3.67290571
+		"AED" : 3.672905
 		/* etc. */
 	}
 };</pre>
@@ -224,10 +232,10 @@ fx.convert(1000, {to: "HKD"}); // 7781.91949 (default `from` currency)
 fx.convert(1000, {from: "GBP", to: "HKD"}); // 12014.50549</pre>
 			<p><code>fx.convert</code> can convert from any currency to any currency, provided they're both in the <code>fx.rates</code> object. For example, if all rates are relative to USD (1:1), and you have the rate for <code>USD:GBP</code> and <code>USD:HKD</code>, you can specify <code>{from: "GBP", to: "HKD"}</code> - money.js will figure out the rate between the two currencies.</p>
 			<h5>Currency names</h5>
-			<p>Currency names directly reference entries in the <code>fx.rates</code> object, so you're not limited to using the standard 3-letter currency codes. If for some reason your exchange rates API gives pounds (&pound;) as <code>"Great British Pounds Sterling"</code>, that's what you'd use instead of <code>"GBP"</code>, naturally. Same goes for other currencies.</p>
+			<p>Currency names directly reference entries in the <code>fx.rates</code> object, so you're not limited to using the standard 3-letter currency codes. If for some reason your exchange rates API gives pounds (&pound;) as <code>"British Pounds Sterling"</code>, that's what you'd use instead of <code>"GBP"</code>. Same goes for other currencies.</p>
 			<p>If you pass in a currency in <code>from</code> or <code>to</code> for which you don't have an exchange rate, money.js will throw an error to let you know that the rate wasn't found.</p>
-			<h5>A little note about accuracy</h5>
-			<p>It's a really good idea to inform your users that the exchange rates / currency conversion is for informational purposes only. Bear in mind that no exchange rates can be truly accurate, because everybody takes their cut when money changes currency and rates do tend to fluctuate. And you don't want to be dealing with customers who are angry because their bank charged them $1.40 more than your website quoted. Lecture over!</p>
+			<h5>Pro Tip disclaimer:</h5>
+			<p>It's a good idea to inform your users that the exchange rates / currency conversion is for informational purposes only. Exchange rates can never be truly accurate and you don't want to be dealing with customers who are angry because their bank charged them $1.40 more than your website quoted!</p>
 
 
 			<h4 id="fx.noConflict">fx.noConflict() <span>available in standalone mode (not AMD/CJS)</span></h4>
@@ -249,7 +257,7 @@ money(5318008).to("HKD");</pre>
 
 			<h5>fx() <span>returns a wrapped fx object for chaining (doesn't do any converting)</span></h5>
 			<pre class="prettyprint">fx(16288) // (fxWrapper)
-			
+
 // NB: if parameter is a string, fx() will attempt to parse it to extract the
 // `from` currency and `value`, so this is the same as the next example:
 fx("$16288 HKD") // (fxWrapper)</pre>
@@ -258,40 +266,45 @@ fx("$16288 HKD") // (fxWrapper)</pre>
 			<pre class="prettyprint">fx(16288).from("HKD") // (fxWrapper)</pre>
 
 			<h5>.to() <span>takes a wrapped fx object and converts to target currency:</span></h5>
-			<pre class="prettyprint">fx(16288).to("GBP"); // 10549.90608307 (uses default `from` currency)
-fx(16288).from("AED").to("GBP"); // 2872.35962914</pre>
+			<pre class="prettyprint">fx(16288).to("GBP"); // 10549.906083 (uses default `from` currency)
+fx(16288).from("AED").to("GBP"); // 2872.359629</pre>
 
 			<h5>.convert() <span>takes a wrapped fx object and performs <code>fx.convert(val, [opts])</code> on it:</span></h5>
 			<pre class="prettyprint">fx(16288).convert(); // uses default `from` / `to` currencies
-fx(16288).convert({ from:"HKD", to:"GBP" }); // 1355.69458109</pre>
+fx(16288).convert({ from:"HKD", to:"GBP" }); // 1355.694581</pre>
 
 
 			<h4 id="accounting.js">Usage with accounting.js</h4>
-			
-			<p>money.js works great with <a href="http://josscrowcroft.github.com/accounting.js" title="accounting.js - format money and numbers in javascript">accounting.js</a> - a library that provides reliable localisation and formatting of money and currency. Here are a few examples, just for kicks:</p>
+
+			<p>money.js works great with <strong><a href="http://josscrowcroft.github.com/accounting.js" title="accounting.js - format money and numbers in javascript" target="_blank">accounting.js</a></strong> - a library that provides reliable localisation and formatting of money and currency. Here are a few examples, just for kicks:</p>
 			<pre class="prettyprint">var value = accounting.unformat(someNumber); // clean up number (eg. user input)
-var toCurrency = "GBP"; // or some user input
-accounting.formatMoney( fx.convert(value, {from:"USD", to: toCurrency}), {
-	symbol: toCurrency,
+var target = "GBP"; // or some user input
+var convertedValue = fx(value).from("USD").to(target);
+
+accounting.formatMoney(convertedValue, {
+	symbol: target,
 	format: "%v %s"
 }); // eg. "53,180.08 GBP"</pre>
-			<p>The reason this is a good idea is that, by design, money.js returns a floating point value with high precision, eg. 8 decimal places (depending on the precision of the relative exchange rates and input value), which is pretty useless if you're displaying prices of things, which generally have 0 or 2 decimal places. accounting.js takes care of all the formatting you'll need for displaying your ready-converted currencies.</p>
-			<p>You could use <code>val.toFixed(2)</code> of course, but we're all (mostly) aware of how quirky (read: <em>&lsquo;arghh!&rsquo;</em>) that can be:</p>
+			<p>This works because money.js can give high precision results (eg. 8 decimal places, depending on the rates and input value), which is overkill if you're displaying prices with 0 or 2 decimal places. <strong><a href="http://josscrowcroft.github.com/accounting.js" title="accounting.js - format money and numbers in javascript" target="_blank">accounting.js</a></strong> takes care of all the formatting.</p>
+			<p>You could use the native <code>value.toFixed(2)</code> of course, but we all know how quirky (read: <em>&lsquo;arghh!&rsquo;</em>) that can be. <code>accounting.toFixed()</code> is a reliable replacement:</p>
 			<pre class="prettyprint">// accounting.toFixed() is a replacement for (Number).toFixed():
 (0.615).toFixed(2);           // "0.61" &lt;== wtfjs??
-accounting.toFixed(0.615, 2); // "0.62" &lt;== that's better</pre>
+accounting.toFixed(0.615, 2); // "0.62" &lt;== better</pre>
 
 			<h4 id="nodeJS-npm">Usage in nodeJS/npm (CommonJS)</h4>
 
 			<p>money.js can easily be used inside nodeJS or any other CommonJS module loader:</p>
 			<pre class="prettyprint">var fx = require("/path/to/money");
-// Now load in your exchange rates and create `fx.settings` if needed</pre>
+// Now load in your exchange rates and create `fx.settings` if needed
+
+// NB: check out the <strong><a target="_blank" href="http://josscrowcroft.github.com/npm-exchange-rates" title="nodeJS npm exchange rates module">exchange-rates</a></strong> npm module
+<!--var oxr = require('exchange-rates').appId('<em>[YOUR APP ID]</em>').load();--></pre>
 			<p>You can also install it via <code>npm install money</code>, then just use:</p>
 			<pre class="prettyprint">var fx = require("money");</pre>
 
 			<h4 id="amd-requirejs">Usage as a RequireJS/AMD module</h4>
 
-			<p>money.js also exposes itself (ha ha) as an <acronym title="Asynchronous Module Definition">AMD</acronym> module, for script loaders such as <a href="http://requirejs.org/" title="JavaScript file and AMD module loader" target="_blank">RequireJS</a>. This assumes you've read up on AMD modules and understand the syntax:</p>
+			<p>money.js also exposes itself (ha ha) as an <acronym title="Asynchronous Module Definition">AMD</acronym> module, for script loaders such as <strong><a href="http://requirejs.org/" title="JavaScript file and AMD module loader" target="_blank">RequireJS</a></strong>. This assumes you've read up on AMD modules and understand the syntax:</p>
 			<pre class="prettyprint">// Usage as a dependency:
 require(["path/to/money"], function(fx) {
 	// Now you have a well-scoped `fx` object to use!
@@ -302,18 +315,19 @@ require(["path/to/money"], function(fx) {
 			<h3>That just about sums it up</h3>
 			<p>That's really all you need to remember - <code>fx.rates</code> and <code>fx.base</code> are important, and your basic function is <code>fx.convert(val, <em>[opts]</em>)</code>, which can be written like this: <code>fx(val).from("USD").to("GBP")</code> or in several other ways (re-read the docs if unsure.)</p>
 			<h5>Feedback / bugs:</h5>
-			<p>If you have any feedback, any at all, tweet <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong>, or head over to the <strong><a href="https://github.com/josscrowcroft/money.js/" title="josscrowcroft/money.js on GitHub">money.js github repository</a></strong> and create a new issue. I'm expecting a few bugs to crop up here and there, so you can help a tonne by reporting them and making suggestions!</p>
-			<p>Pull requests / contributions are similarly welcome. Get forkin'.</p>
+			<p>If you have any feedback, any at all, tweet <strong><a href="http://twitter.com/josscrowcroft" title="joss crowcroft twitter" target="_blank">@josscrowcroft</a></strong>, or head over to the <strong><a href="https://github.com/josscrowcroft/money.js/" title="josscrowcroft/money.js on GitHub">money.js github repository</a></strong> and create a new issue. Pull requests / contributions welcome!</p>
 
-			<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="josscrowcroft" data-url="http://josscrowcroft.github.com/money.js" data-text="money.js - tiny javascript library for real-time currency conversion">Tweet</a> &nbsp; <g:plusone size="medium"></g:plusone></p>
+			<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="josscrowcroft" data-url="http://josscrowcroft.github.com/money.js" data-text="money.js - tiny javascript library for real-time currency conversion" target="_blank">Tweet</a> &nbsp; <g:plusone size="medium"></g:plusone></p>
 
 		</div>
 		<footer>
-			<h3>Meet the team:</h3>
+			<h3>More projects by <strong><a href="http://www.josscrowcroft.com" title="Joss" target="_blank">Joss</a></strong>:</h3>
 			<ul>
-				<li><strong><a href="http://www.josscrowcroft.com" title="Joss" target="_blank">Joss</a></strong> - the guy who made money.js and the Open Source Exchange Rates project, accounting.js, MotionCAPTCHA, and a bunch of other things.</li>
-				<li><strong><a href="http://demandanalytics.com" title="demand analytics" target="_blank">demand analytics</a></strong> - the company sponsoring the hosting and development of money.js, the Exchange Rates project and several of Joss's other weird ideas.</li>
-				<li><strong><a href="http://currencybot.github.com" title="Currency Bot" target="_blank">Currency Bot</a></strong> - the affable droid who tirelessly collects exchange rate data, hour after hour, without fail (so far):</li>
+				<li><strong><a href="http://openexchangerates.org/" title="Free JSON Currency Conversion Exchange Rates API" target="_blank">Open Exchange Rates</a></strong> - Real-time exchange rates and currency conversion JSON API</li>
+				<li><strong><a href="http://josscrowcroft.github.com/accounting.js" title="accounting.js - format money and numbers in javascript" target="_blank">accounting.js</a></strong> - JavaScript number- and money-formatting library</li>
+				<li><strong><a href="http://www.josscrowcroft.com/demos/motioncaptcha/" title="MotionCAPTCHA - Stop Spam, Draw Shapes" target="_blank">MotionCAPTCHA</a></strong> - "Stop spam, draw shapes" (proof of concept)</li>
+				<li><strong><a href="http://www.cssreset.com/" title="CSS Reset - most common CSS Reset scripts all in one place, with CSS video tutorials" target="_blank">CSS Reset</a></strong> - All the most common CSS Reset scripts in one place, to copy/paste.</li>
+				<li><strong><a href="http://twitter.com/josscrowcroft" title="Joss on Twitter (@josscrowcroft)" target="_blank">@josscrowcroft</a></strong> - You can follow me on Twitter here.</li>
 			</ul>
 			<p>
 				<img src="http://currencybot.github.com/CurrencyBot.png" alt="currency bot, portrait donated by robohash.org" />
@@ -332,27 +346,26 @@ require(["path/to/money"], function(fx) {
 
 	<script type="text/javascript">
 		$.ajax({
-			url: 'http://openexchangerates.org/latest.json',
+			url: 'http://openexchangerates.org/api/latest.json?app_id=temporary-8e496001fb7b9b49824',
 			dataType: 'jsonp',
-			error: function(a,b,c) {
-				console.log(a,b,c);
+			error: function() {
+				console.log("An error! Please contact @josscrowcroft.");
 			},
 			success: function(data) {
-				console.log(data);
 				fx.rates = data.rates;
 				fx.base = data.base;
-				
+
 				fx.settings = {
 					from: "USD",
 					to: "GBP"
 				}
-	
+
 				setTimeout(function() {
 					sandbox.model.iframeEval('fx.settings = { from : "USD", to : "GBP" }; fx.base = "USD"; fx.rates = ' + JSON.stringify(fx.rates) + '; ');
 				}, (typeof sandbox !== "undefined") ? 0 : 1000);
 			}
 		});
-		
+
 		prettyPrint();
 	</script>
 
@@ -396,7 +409,7 @@ require(["path/to/money"], function(fx) {
 				["set the default from/to currencies", "fx.settings = {from : 'GBP', to : 'EUR'};"]
 			];
 			_.each(sampleCommands, function(cmd, i, list) {
-				$('<a href="">' + cmd[0] + '</a>').appendTo('#sample-commands').click(function() {
+				$('<strong><a href="">' + cmd[0] + '</a></strong>').appendTo('#sample-commands').click(function() {
 					sandbox.setValue(cmd[1]);
 					return false;
 				}).after(i < (list.length - 1) ? "&nbsp; &bull; &nbsp;" : "");
@@ -427,6 +440,6 @@ require(["path/to/money"], function(fx) {
 		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
-	
+
 </body>
 </html>

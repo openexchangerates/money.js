@@ -85,8 +85,8 @@ html {
 }
 body {
 	font-family: "Helvetica Neue", sans-serif;
-	color: #eee;
-	background: #333;
+	color: #f1f1f1;
+	background: #2c2c2c;
 	padding:60px 70px 40px 120px;
 	width:640px;
 	font-size: 16px;
@@ -117,7 +117,7 @@ h2 {
 	padding:0;
 	margin:0 0 1.4em;
 	line-height:1.4;
-	color: #CB4B16;
+	color: #e15416;
 }
 h3, h4 {
 	font-family: "Helvetica Neue", sans-serif;
@@ -155,18 +155,18 @@ h5 span {
 
 a,
 a:visited {
-	color:#297912;
+	color:#398922;
 	text-decoration:none;
 }
 a:hover,
 a:focus,
 a:active {
-	border-bottom:2px solid #398922;
+	border-bottom:2px solid #499932;
 }
 strong a:hover,
 strong a:focus,
 strong a:active {
-	border-bottom:3px solid #398922;
+	border-bottom:3px solid #499932;
 }
 pre a, pre a span, a, a span {
 	color:#268bd2 !important;
@@ -179,12 +179,12 @@ pre a, pre a span, a, a span {
 
 p, 
 ul {
-	padding:0 0 1.6em;
+	padding:0 0 1.7em;
 	margin:0;
 	line-height:1.61em;
 }
 li {
-	margin:0 0 5px 24px;
+	margin:0 0 5px 25px;
 	line-height:1.61em;
 }
 abbr {
@@ -194,7 +194,7 @@ abbr {
 code {
 	font-family:"Consolas", "Andale Mono", "Courier New", "Courier", monospace;
 	padding:0 2px;
-	color: #B58900;
+	color: #c59910;
 }
 pre {
 	font-size:14px;
@@ -204,7 +204,7 @@ pre {
 	border:0 none;
 	outline:0 none;
 	color: #ccc;
-	background: #222;
+	background: #1b1b1b;
 	padding:20px 20px 15px;
 	-webkit-border-radius: 10px;
 	   -moz-border-radius: 10px;
@@ -334,13 +334,13 @@ em {
 #sandbox {
 	margin:10px 0 40px -20px !important;
 	max-width:auto !important;
-	background:#222 !important;
+	background:#1b1b1b !important;
 }
 #sandbox pre.output {
 	height:235px !important;
 }
 #sandbox .input textarea {
-	background:#222 !important;
+	background:#1b1b1b !important;
 }
 #sandbox pre.output span.error { color: #CB4B16!important; font-weight:bold; }
 #sandbox pre.output span.string { color: #CB4B16!important }
