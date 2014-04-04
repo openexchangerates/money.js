@@ -2,3 +2,5 @@
 err.log
 out.log
 forever.log
+coverage/
+node_modules

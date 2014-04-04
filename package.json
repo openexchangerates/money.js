@@ -6,6 +6,15 @@
 	"author": "Joss Crowcroft <josscrowcroft@gmail.com> (http://www.josscrowcroft.com)",
 	"contributors" : [],
 	"dependencies" : {},
+	"devDependencies": {
+		"mocha": "~1.18.2",
+		"mocha-lcov-reporter": "~0.0.1",
+		"chai": "~1.9.1",
+		"istanbul": "~0.2.7"
+	},
+	"scripts": {
+		"test": "istanbul cover node_modules/mocha/bin/_mocha tests/index.js --report text -- -R spec"
+	},
 	"repository" : {"type": "git", "url": "git://github.com/josscrowcroft/money.js.git"},
 	"main" : "money.js",
 	"version" : "0.1.3"
