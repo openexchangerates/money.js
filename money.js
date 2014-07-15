@@ -1,6 +1,6 @@
 /*!
- * money.js / fx() v0.1.3
- * Copyright 2011, Joss Crowcroft
+ * money.js / fx() v0.2
+ * Copyright 2014 Open Exchange Rates
  *
  * JavaScript library for realtime currency conversion and exchange rate calculation.
  *
@@ -8,7 +8,7 @@
  * Portions of money.js are inspired by or borrowed from underscore.js
  *
  * For details, examples and documentation:
- * http://josscrowcroft.github.com/money.js/
+ * http://openexchangerates.github.io/money.js/
  */
 (function(root, undefined) {
 
@@ -18,7 +18,7 @@
 	};
 
 	// Current version.
-	fx.version = '0.1.3';
+	fx.version = '0.2';
 
 
 	/* --- Setup --- */
