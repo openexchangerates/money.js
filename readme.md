@@ -4,9 +4,10 @@ Simple and tiny JavaScript library for realtime currency conversion and exchange
 
 **money.js** is lightweight, has no dependencies, and works great client-side or server-side. Use standalone or as a nodeJS/npm and AMD/requireJS module.
 
-Designed for seamless integration with the **[Open Exchange Rates API](https://openexchangerates.org)**, but can be integrated with any source of currency data or with static/cached/approximate exchange rates.
+Designed for seamless integration with the **[Open Exchange Rates API](https://openexchangerates.org "Free reliable exchange rates/currency conversion data API")**, but can be integrated with any source of currency data or with static/cached/approximate exchange rates.
 
 Visit the plugin homepage for demos and documentation: **http://openexchangerates.github.io/money.js/**
+
 
 ## Quick Examples:
 

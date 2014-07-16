@@ -4,9 +4,12 @@
 	"homepage": "http://openexchangerates.github.io/money.js",
 	"keywords" : ["money", "fx", "currency", "convert", "conversion", "exchange", "rate", "utilities", "accounting", "number", "cart", "ecommerce"],
 	"author": "Open Exchange Rates <info@openexchangerates.org> (https://www.openexchangerates.org)",
-	"contributors" : ["josscrowcroft"],
+	"contributors" : [
+		"Open Exchange Rates <info@openxchangerates.org> (https://openexchangerates.org)",
+		"Joss Crowcroft <josscrowcroft@gmail.com> (http://www.josscrowcroft.com)"
+	],
 	"dependencies" : {},
 	"repository" : {"type": "git", "url": "git://github.com/openexchangerates/money.js.git"},
 	"main" : "money.js",
-	"version" : "0.2"
+	"version" : "0.2.0"
 }
