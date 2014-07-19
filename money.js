@@ -66,6 +66,39 @@
 		return val * getRate( opts.to, opts.from );
 	};
 
+	// Returns the exchange rate between two currencies.
+	// Accepts a string parameter of the form "FROM/TO", or an object with "from" and "to" properties.
+	var pair = fx.pair = function(currencies) {
+		var to, from;
+
+		if(typeof currencies == 'object') {
+			// Throw an error if currencies.to or currencies.from isn't set
+			if(!currencies.from || !currencies.to) throw "fx error: expected an object with properties 'to' and 'from' set.";
+
+			from = currencies.from;
+			to = currencies.to;
+		}
+		else if(typeof currencies == 'string') {
+			if(currencies.indexOf('/') == -1) {
+				throw "fx error: expected a string of the form FROM/TO.";
+			}
+
+			currencies = currencies.split('/');
+
+			if(currencies.length != 2) {
+				throw "fx error: expected a string of the form FROM/TO.";
+			}
+
+			from = currencies[0];
+			to = currencies[1];
+		}
+		else {
+			throw "fx error: unknown format.";
+		}
+
+		return getRate(to, from);
+	};
+
 	// Returns the exchange rate to `target` currency from `base` currency
 	var getRate = function(to, from) {
 		// Save bytes in minified version
@@ -128,7 +161,6 @@
 	fxProto.to = function(currency) {
 		return convert(this._v, {from: this._fx ? this._fx : fx.settings.from, to: currency});
 	};
-
 
 	/* --- Module Definition --- */
 
