@@ -1,0 +1,11 @@
+{
+	"name": "money.js",
+	"version": "0.1.3",
+	"main": "money.js",
+	"ignore": [
+		"demo-resources",
+		"favicon.ico",
+		"index.html",
+		"readme.md"
+	]
+}
