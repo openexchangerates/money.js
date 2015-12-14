@@ -75,7 +75,19 @@
 		rates[fx.base] = 1;
 
 		// Throw an error if either rate isn't in the rates array
-		if ( !rates[to] || !rates[from] ) throw "fx error";
+		if ( !rates[to] || !rates[from] ) {
+			var msg = 'Cannot convert ' + from + ' to ' + to + ': ';
+
+			if ( !rates[to] && !rates[from] ) {
+				msg += 'exhange rates for both currencies are missing';
+			} else if ( !rates[to] ) {
+				msg += 'exhange rate for ' + to + ' is missing';
+			} else if ( !rates[from] ) {
+				msg += 'exhange rate for ' + from + ' is missing';
+			}
+
+			throw new Error( msg );
+		}
 
 		// If `from` currency === fx.base, return the basic exchange rate for the `to` currency
 		if ( from === fx.base ) {
