@@ -9,7 +9,14 @@
 		"Joss Crowcroft <josscrowcroft@gmail.com> (http://www.josscrowcroft.com)"
 	],
 	"dependencies" : {},
+  "devDependencies": {
+    "mocha": "^2.3.x",
+    "chai": "^2.1.x"
+  },
 	"repository" : {"type": "git", "url": "git://github.com/openexchangerates/money.js.git"},
 	"main" : "money.js",
-	"version" : "0.2.0"
+	"version" : "0.3.0",
+	"scripts": {
+		"test": "mocha --reporter spec tests"
+	}
 }
