@@ -107,4 +107,14 @@ describe('Main test', function () {
 		});
 	});
 
+  describe('fx.getRate(to, from)', function () {
+    it('should give default rate if compare with base', function () {
+      fx.getRate('EUR', 'USD').should.be.equal(0.42);
+      fx.getRate('GBP', 'USD').should.be.equal(0.23);
+    });
+    it('should give reversed rate if compare from base', function () {
+      fx.getRate('USD', 'EUR').should.be.equal(2.380952380952381);
+      fx.getRate('USD', 'GBP').should.be.equal(4.3478260869565215);
+    });
+  });
 });

@@ -1,5 +1,5 @@
 /*!
- * money.js / fx() v0.2
+ * money.js / fx() v0.3
  * Copyright 2014 Open Exchange Rates
  *
  * JavaScript library for realtime currency conversion and exchange rate calculation.
@@ -18,7 +18,7 @@
 		};
 
 		// Current version.
-		fx.version = '0.2';
+		fx.version = '0.3';
 
 
 		/* --- Setup --- */
@@ -70,7 +70,7 @@
 		};
 
 		// Returns the exchange rate to `target` currency from `base` currency
-		var getRate = function(to, from) {
+		var getRate = fx.getRate = function(to, from) {
 			// Save bytes in minified version
 			var rates = fx.rates;
 
