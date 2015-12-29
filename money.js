@@ -124,7 +124,9 @@
 	// fx(val).convert(opts) does the same thing as fx.convert(val, opts)
 	fxProto.convert = function() {
 		var args = Array.prototype.slice.call(arguments);
-		args.unshift(this._v);
+		if (typeof this._v !== 'undefined') {
+			args.unshift(this._v);
+		}
 		return convert.apply(fx, args);
 	};
 
