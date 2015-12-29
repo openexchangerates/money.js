@@ -61,20 +61,20 @@ describe('Main test', function () {
 	describe('Multiple instance of fx()', function () {
 		var money = fx.factory();
 
-    money.rates = util._extend({}, fx.rates);
-    money.base = "" + fx.base;
-    money.settings = util._extend({}, fx.settings);
+		money.rates = util._extend({}, fx.rates);
+		money.base = "" + fx.base;
+		money.settings = util._extend({}, fx.settings);
 		money.rates.EUR = 0.5;
 		money.rates.GBP = 0.6;
 
-    it('shoud be a same instance', function () {
-      var copyMoney = require('../money.js');
-      copyMoney.should.be.equal(fx);
-    });
+		it('shoud be a same instance', function () {
+			var copyMoney = require('../money.js');
+			copyMoney.should.be.equal(fx);
+		});
 
-    it('should be a new instance if called with factory()', function () {
-      fx.factory().should.not.be.equal(fx);
-    })
+		it('should be a new instance if called with factory()', function () {
+			fx.factory().should.not.be.equal(fx);
+		})
 
 		it('should be correctly convert without currencies', function () {
 			fx.convert(100).should.be.equal(42);
@@ -88,33 +88,33 @@ describe('Main test', function () {
 
 		it('should be correctly convert with to currency on second argument', function () {
 			fx.convert(100, {to: 'GBP'}).should.be.equal(23);
-      money.convert(100, {to: 'GBP'}).should.be.equal(60);
+			money.convert(100, {to: 'GBP'}).should.be.equal(60);
 		});
 
 		it('should be correctly convert with to & from currency on second argument', function () {
 			fx.convert(100, {from: 'EUR', to: 'USD'}).should.be.equal(238.0952380952381);
-      money.convert(100, {from: 'EUR', to: 'USD'}).should.be.equal(200);
+			money.convert(100, {from: 'EUR', to: 'USD'}).should.be.equal(200);
 		});
 
 		it('should be correctly convert with to currency chained', function () {
 			fx(100).to('GBP').should.be.equal(23);
-      money(100).to('GBP').should.be.equal(60);
+			money(100).to('GBP').should.be.equal(60);
 		});
 
 		it('should be correctly convert with to & from currency chained', function () {
 			fx(100).from('EUR').to('USD').should.be.equal(238.0952380952381);
-      money(100).from('EUR').to('USD').should.be.equal(200);
+			money(100).from('EUR').to('USD').should.be.equal(200);
 		});
 	});
 
   describe('fx.getRate(to, from)', function () {
-    it('should give default rate if compare with base', function () {
-      fx.getRate('EUR', 'USD').should.be.equal(0.42);
-      fx.getRate('GBP', 'USD').should.be.equal(0.23);
-    });
-    it('should give reversed rate if compare from base', function () {
-      fx.getRate('USD', 'EUR').should.be.equal(2.380952380952381);
-      fx.getRate('USD', 'GBP').should.be.equal(4.3478260869565215);
-    });
+		it('should give default rate if compare with base', function () {
+			fx.getRate('EUR', 'USD').should.be.equal(0.42);
+			fx.getRate('GBP', 'USD').should.be.equal(0.23);
+		});
+		it('should give reversed rate if compare from base', function () {
+			fx.getRate('USD', 'EUR').should.be.equal(2.380952380952381);
+			fx.getRate('USD', 'GBP').should.be.equal(4.3478260869565215);
+		});
   });
 });

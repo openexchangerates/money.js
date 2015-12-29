@@ -18,7 +18,7 @@
 		};
 
 		// Current version.
-		fx.version = '0.3';
+		fx.version = '0.3.0';
 
 
 		/* --- Setup --- */
