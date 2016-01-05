@@ -79,11 +79,11 @@
 			var msg = 'Cannot convert ' + from + ' to ' + to + ': ';
 
 			if ( !rates[to] && !rates[from] ) {
-				msg += 'exhange rates for both currencies are missing';
+				msg += 'exchange rates for both currencies are missing';
 			} else if ( !rates[to] ) {
-				msg += 'exhange rate for ' + to + ' is missing';
+				msg += 'exchange rate for ' + to + ' is missing';
 			} else if ( !rates[from] ) {
-				msg += 'exhange rate for ' + from + ' is missing';
+				msg += 'exchange rate for ' + from + ' is missing';
 			}
 
 			throw new Error( msg );
