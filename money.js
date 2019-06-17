@@ -163,4 +163,4 @@
 	}
 
 	// Root will be `window` in browser or `global` on the server:
-}(this));
+}(typeof self !== 'undefined' ? self : this));
